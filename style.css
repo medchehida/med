@@ -1,0 +1,484 @@
+/* Ensure border-box is used */
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+
+/*--------------------------------------*/
+/*            Core Styles               */
+/*--------------------------------------*/
+
+body {
+    margin: 0;
+    padding:0;
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    min-width: 198px;
+}
+
+p{
+    margin:0;
+    padding:0;
+}
+/*--------------------------------------*/
+/*    Contains Header, Nav, & Logo      */
+/*--------------------------------------*/
+
+.container {
+    width: 95%; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/*--------------------------------------*/
+/* HEADER: Position relative to help... */
+/*    ... poitioning elements absolute  */
+/*--------------------------------------*/
+
+header {
+    padding: 3em 0;
+    position: relative;
+}
+
+main{
+    padding-top: 5em;
+}
+
+/*------------------------------------------*/
+/* Allows multiple floats in same element   */
+/*------------------------------------------*/
+
+header::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+/*--------------------------------------*/
+/*               LOGO                   */
+/*--------------------------------------*/
+
+.logo {                  /* Effects the whole logo, but #logo-last has changes */
+    float: left;                    /* Starting position of "JASON" for logo */
+    color: black;
+    font-size: 1.1rem;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+        padding-bottom: 20px;
+
+}
+
+
+
+/*--------------------------------------*/
+/*            Navigation                */
+/*--------------------------------------*/
+.site-nav {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background: white;
+    height: 0px;
+    overflow: hidden;
+}
+
+.site-nav-open {
+    height: auto;
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;  /* Removes li bullets */
+}
+
+.site-nav li {
+    border-bottom: 1px solid #8c8c8c;  /* border beneath nav li */
+}
+
+.site-nav li:last-child {     /* removes border from last nav li */
+    border: none;
+}
+
+.site-nav a {            /* Displays nav links as block for smaller screens */
+    color: black;
+    display: block;
+    padding: 2em 2em 2em 1.5em;  /* padding for links */
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/*--------------------------------------*/
+/*   ICON styling for smaller screens   */
+/*--------------------------------------*/ 
+
+.site-nav-icon  {
+    display: inline-block;   /* allows margin changes */
+    font-size: 1.5em;
+    margin-right: 1em;
+    width: 1em;           /* width lines the icons up */
+    text-align: right;  
+    color: black;  /* white with low opacity to make icons less bright */
+}
+
+/*--------------------------------------*/
+/* Acts as btn & contains hamburger     */
+/*--------------------------------------*/
+
+.menu-toggle {
+    padding: 1em;
+    position: absolute;
+    top: 1.7em;
+    right: 1em;
+    cursor: pointer;
+}
+
+
+/*--------------------------------------*/
+/*   Styles the hamburger for btn       */
+/*--------------------------------------*/
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content:'';
+    display: block;
+    background:black;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 2px;
+    transition: all ease-in-out 500ms;
+}
+
+/*--------------------------------------*/
+/* Instance of hamburger (top line)     */
+/*--------------------------------------*/
+
+.hamburger::before {
+    transform: translateY(-7px);
+}
+
+/*--------------------------------------*/
+/* Instance of hamburger bottom line    */
+/*--------------------------------------*/
+
+.hamburger::after {
+    transform: translateY(4px);
+}
+
+/*--------------------------------------*/
+/* When Nav menu is open, hamburger = X */
+/*--------------------------------------*/
+
+.open .hamburger {
+    transform: rotate(45deg);
+    background: black;
+}
+
+/*--------------------------------------*/
+/* Before hamburger line is invisible   */
+/*--------------------------------------*/
+.open .hamburger::before {
+    opacity: 0;            
+}
+
+/*--------------------------------------*/
+/* Animates after line to create an X   */
+/*--------------------------------------*/
+.open .hamburger::after {
+    transform: translateY(-3px) rotate(-90deg);
+    background: black;
+}
+
+
+
+
+/*--------------------------------------*/
+/*    For Device (Screens > 700px )     */
+/*--------------------------------------*/
+@media (min-width:700px) {
+
+    .menu-toggle {       /* Removes hamburger menu */
+        display: none;
+    }
+
+    .site-nav {         /* Positions site nav & removes background color */
+        height: auto;
+        position: relative;
+        background: transparent;
+        float: right;
+        font-weight: 300;
+    }
+
+    .site-nav li {               /* inline-block and removes border from bottom */
+        display: inline-block;
+        border: none;
+    }
+
+    .site-nav a {       /* Adds spacing between Nav links */
+        padding: 0;
+        margin-left: 3em;
+    }
+
+
+    .site-nav .site-nav-icon {     /* Removes Font Awesome Icons for larger screens */
+        display: none;
+    }
+
+}
+
+
+
+/*FOOOOOOOOOTER*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  top: 0px;
+  left: 0px;
+  margin: 0 auto;
+  height: 100%;
+}
+section {
+  display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+   margin-bottom: 0;
+
+}
+/*..................*/
+
+footer {
+position: relative;    margin-bottom: 0;
+  bottom: 0;
+  vertical-align: baseline;
+  width: 100%;
+}
+/*..................*/
+
+.column {
+    float: left;
+    width: 25%;
+    
+ margin: 0 auto;
+  text-align: center;
+ margin: 0% 0%;
+}
+.c2 {
+  width: 50% !important;
+  margin: 2% 0% !important;
+}
+.m2 {
+  margin-left: -1px !important;
+    margin-right: -1px !important;
+}
+.rt {
+    text-align: right !important;
+  float: right !important;
+}
+
+.row {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.ff {
+    
+    border-top: .1rem solid #dfe5ed;
+  border-bottom: .1rem solid #dfe5ed;
+  border-right: .1rem solid #dfe5ed;
+    min-height: 4.6rem;
+   
+}
+.f1 {
+  border-left: .1rem solid #dfe5ed;
+}
+
+/*..................*/
+
+.f-txt {
+          font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #58626D;
+    font-family: 'Poppins', sans-serif;
+    margin: 2% 0%;
+  letter-spacing: 0.1em;
+  margin-bottom: -2%;
+}
+.ff-txt {
+ text-align: center;
+  letter-spacing: 0.2em;
+    font-size: 0.6rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #58626D;
+    font-family: 'Poppins', sans-serif;
+    margin: 2% 0%;
+  letter-spacing: 1.5px;
+  margin-bottom: 2%;
+  width: 100%;
+  text-transform:uppercase;
+}
+.m {
+  font-weight: 700; 
+}
+.md {
+  margin-top:6%;
+}
+.md1 {
+  margin-top:8% !important;
+}
+
+a {
+  text-decoration: none;
+    color: #58626D;
+  cursor: pointer;
+}
+a:hover {
+     cursor: pointer;
+    -webkit-transition: color .15s ease-out;
+    -moz-transition: color .15s ease-out;
+    transition: color .15s ease-out;
+    color:#2fd6a7; 
+}
+.lt {
+    text-align: left !important;
+  float: left !important;
+}
+.ct {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+/*..................*/
+.social-wrapper {
+    -webkit-flex-basis: 0%;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0%;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.social-wrapper {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.social-wrapper li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 26px 10px;
+    width: 33.333%;
+  
+}
+.social-wrapper ul {
+    width: 100%;
+  
+}
+.reset-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  display: inline-flex;
+}
+.reset-ul>li {
+    display: inline-block;
+    vertical-align: middle;
+}
+.social-wrapper a {
+    margin-left: auto;
+    margin-right: auto;
+}
+.social-wrapper li:not(:last-child) {
+    border-right: .1rem solid #dfe5ed;
+}
+.justify-content-between {
+    -webkit-box-pack: justify!important;
+    -webkit-justify-content: space-between!important;
+    -ms-flex-pack: justify!important;
+    justify-content: space-between!important;
+}
+/*......Mobile...............*/
+@media (max-width: 767px) {
+  section {
+     margin: 8% 0%;
+  }
+}
+
+@media (max-width: 767px) {
+.column {
+    display: block;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    border: none;
+    -webkit-flex: 1;
+    flex: 1;
+  margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  .ff {
+    padding: 0rem 0.5rem;
+    border-top: .1rem solid #dfe5ed;
+    border-left: .1rem solid #dfe5ed;
+    border-right: .1rem solid #dfe5ed;
+   }
+  .md {
+    margin: 4%;
+   }
+  .md1 {
+  margin-top:2%;
+}
+  .f-txt {
+    margin-bottom: 6%;
+    margin-top: 8%;
+   }
+  .up {
+    margin-top: -4%;
+   }
+}
+
+@media (max-width: 767px) {
+  .social-wrapper li {
+     padding: 26px 10px;
+     border-bottom: .1rem solid #dfe5ed;
+  }
+}
+

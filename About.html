@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Med Chehida</title>
+        <link rel="stylesheet" href="style.css">
+     <script src="jqeury.js"></script>
+       <script src="script.js"></script>
+
+<script src="https://use.fontawesome.com/d8c78c040b.js"></script>
+        <script src="https://snapwidget.com/js/snapwidget.js"></script>
+
+
+        <meta charset="UTF-8">
+        <meta name="description" content="My portfolio come see my work and we can work together if you want!">
+        <meta name="keywords" content="Photography, Cinemaphotography, Video editing, Med Chehida">
+        <meta name="author" content="Med Chehida">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+        
+$(document).ready(function () {
+    $("#navbar").load("/navbar.html");
+});
+
+            
+                    
+$(document).ready(function () {
+    $("#footer").load("/footer.html");
+});
+
+        </script>
+        
+        
+        <script>
+        
+        
+
+// Slider with Fluid Width Layout
+function sliderFluid() {
+  $('.slider-container-fluid li:first-child').appendTo(".slider-container-fluid ul"); 
+	$("ul").css("left","0");
+	$("ul").animate({"left":"-100" + "%"},500);
+	setTimeout("sliderFluid()",5500); 
+};
+sliderFluid();
+
+
+</script>
+
+        
+        <style>
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #555;
+  font-weight: normal;
+}
+            
+        
+.slider-container-fluid {
+  width: 70%;
+  max-width: 600px;
+  margin: 0 auto 80px;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  position: relative;
+  width: 400%;  
+  /* Every image added to the slider requires an extra 100%  e.g. '4 images = 400%' '5 images = 500%' etc. */
+}
+
+li {
+  float: left;
+  width: 25%; 
+  /* li width is 100% divided by the amount of images  e.g. '4 images = 25%' '5 images = 20%' etc. */
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  .slider-container-fixed {
+    width: 300px;
+  }
+  
+  .slider-container-fixed ul {
+    width: 1200px;
+  }
+}
+</style>
+        
+        
+    </head>
+    <body>
+    
+
+<div class="slider-container-fluid clear-fix">
+    <ul>
+      <li><img src="car.png" /></li>
+      <li><img src="portrait.png" /></li>
+      <li><img src="rain.png" /></li>
+      <li><img src="reflection.png" /></li>
+    </ul>
+</div>
+    
+    </body>
+
+</html>
